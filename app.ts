@@ -63,5 +63,61 @@
 // const person: { name: string; role: Role } = {
 //   name: 'Ahsan',
 //   role: Role.ADMIN,
+
 // };
 // console.log(person.role);
+
+// working with the union types
+// const class1:string | number | boolean= true ;
+
+// >>> working with the literal types;
+
+// const person:{
+//     name:"Ahsan" | "Ali" ;
+//     age:number;
+// }={
+//     name:"Ali",
+//     age:22
+// }
+
+// >>>>>> working with the type aliases
+
+// type PersonType={
+//     name:string;
+//     age:number;
+//     session:string;
+// }
+
+// const person:PersonType={
+//     name:"Ahsan",
+//     age:22,
+//     session:"Evening"
+// }
+
+// >>>>> function return type and void keyword;
+
+// function add(num1:number,num2:number){
+//     return num1 + num2;
+// }
+
+// add(2,6)
+
+// >>>>..>>>>> Function as Types;
+// let result:Function;
+
+// function demo(num1:number,num2:number){
+//     return num1 + num2;
+// }
+
+// function printResult(msg:string,num2:number){
+//     return "ah"
+// }
+
+// // result=demo;
+
+// let result:(num1:number,num2:number)=>string;
+
+// function show(n:number,n2:number){
+//     return "Ahsan"
+// }
+// result=show;
