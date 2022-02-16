@@ -38,18 +38,72 @@
 // hobbies.push() it will not throw any error;
 // hobbies[0]="Football"; it will be valid;
 // working with the enum types;
-var Role;
-(function (Role) {
-    Role["ADMIN"] = "admin";
-    Role["USER"] = "user";
-})(Role || (Role = {}));
-var Role2;
-(function (Role2) {
-    Role2[Role2["ADMIN"] = 4] = "ADMIN";
-    Role2[Role2["USER"] = 5] = "USER";
-})(Role2 || (Role2 = {}));
-var person = {
-    name: 'Ahsan',
-    role: Role2.USER
-};
-console.log(person.role);
+// enum Role {
+//   ADMIN = 'admin',
+//   USER = 'user',
+// }
+// enum Role2 {
+//   ADMIN = 4,
+//   USER,
+// }
+// const person: { name: string; role: Role } = {
+//   name: 'Ahsan',
+//   role: Role.ADMIN,
+// };
+// console.log(person.role);
+// working with the union types
+// const class1:string | number | boolean= true ;
+// >>> working with the literal types;
+// const person:{
+//     name:"Ahsan" | "Ali" ;
+//     age:number;
+// }={
+//     name:"Ali",
+//     age:22
+// }
+// >>>>>> working with the type aliases
+// type PersonType={
+//     name:string;
+//     age:number;
+//     session:string;
+// }
+// const person:PersonType={
+//     name:"Ahsan",
+//     age:22,
+//     session:"Evening"
+// }
+// >>>>> function return type and void keyword;
+// function add(num1:number,num2:number){
+//     return num1 + num2;
+// }
+// add(2,6)
+// >>>>..>>>>> Function as Types;
+// let result:Function;
+// function demo(num1:number,num2:number){
+//     return num1 + num2;
+// }
+// function printResult(msg:string,num2:number){
+//     return "ah"
+// }
+// // result=demo;
+// let result:(num1:number,num2:number)=>string;
+// function show(n:number,n2:number){
+//     return "Ahsan"
+// }
+// result=show;
+// working with the callback types;
+// function demo(num1:number,cb:(msg:string)=>string){
+//   cb("Ahsan")
+// };
+// demo(2,()=>{
+//   return "Ahsan"
+// })
+// working with the unknow type;
+// let msg:unknown;
+// let result:string;
+// result=msg
+// working with the never type;
+function generateError(msg, statusCode) {
+    throw { msg: msg, statusCode: statusCode };
+}
+generateError('Please add a name', 400);

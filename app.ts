@@ -121,3 +121,26 @@
 //     return "Ahsan"
 // }
 // result=show;
+
+// working with the callback types;
+
+// function demo(num1:number,cb:(msg:string)=>string){
+//   cb("Ahsan")
+// };
+
+// demo(2,()=>{
+//   return "Ahsan"
+// })
+
+// working with the unknow type;
+// let msg:unknown;
+// let result:string;
+// result=msg
+
+// working with the never type;
+
+// function generateError(msg: string, statusCode: number): never {
+//   throw { msg, statusCode };
+// }
+
+// generateError('Please add a name', 400);
