@@ -1,3 +1,4 @@
+"use strict";
 // using types
 // working with string, number and boolean;
 // >> when working with variables
@@ -103,7 +104,57 @@
 // let result:string;
 // result=msg
 // working with the never type;
-function generateError(msg, statusCode) {
-    throw { msg: msg, statusCode: statusCode };
-}
-generateError('Please add a name', 400);
+// function generateError(msg: string, statusCode: number): never {
+//   throw { msg, statusCode };
+// }
+// generateError('Please add a name', 400);
+// >>>2  TypeScript Compiler and its configuration >>>>>
+// 2.1  // 2.5 >>>>>>Understanding typescript core libs;
+// const button = document.querySelector('button')!;
+// button.addEventListener('click', () => {
+//   console.log('clicked');
+// });
+// let name: string = 2;
+// Classes and Interface;
+// class Department {
+//   name: string;
+//   salaries: number;
+//   constructor(n: string, s: number) {
+//     this.name = n;
+//     this.salaries = s;
+//   }
+//   getSalaries() {
+//     return this.salaries;
+//   }
+// }
+// const accounting = new Department('Accounting', 255000);
+// // thing to keep in mind
+// const accountingCopy = {
+//   getData: accounting.getSalaries,
+// };
+// console.log(accountingCopy.getData());
+// Private and Public accessors;
+// class Department {
+//   private name: string;
+//   private salaries: number;
+//   constructor(n: string, s: number) {
+//     this.name = n;
+//     this.salaries = s;
+//   }
+//   public getSalaries() {
+//     return this.salaries;
+//   }
+// }
+// const accounting = new Department('Accounting', 255000);
+// shorthand Initialization
+var Department = /** @class */ (function () {
+    function Department(name, salaries) {
+        this.name = name;
+        this.salaries = salaries;
+    }
+    Department.prototype.getSalaries = function () {
+        return this.salaries;
+    };
+    return Department;
+}());
+var accounting = new Department('Accounting', 255000);

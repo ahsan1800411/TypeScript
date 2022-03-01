@@ -144,3 +144,65 @@
 // }
 
 // generateError('Please add a name', 400);
+
+// >>>2  TypeScript Compiler and its configuration >>>>>
+
+// 2.1  // 2.5 >>>>>>Understanding typescript core libs;
+
+// const button = document.querySelector('button')!;
+// button.addEventListener('click', () => {
+//   console.log('clicked');
+// });
+// let name: string = 2;
+
+// Classes and Interface;
+
+// class Department {
+//   name: string;
+//   salaries: number;
+//   constructor(n: string, s: number) {
+//     this.name = n;
+//     this.salaries = s;
+//   }
+
+//   getSalaries() {
+//     return this.salaries;
+//   }
+// }
+
+// const accounting = new Department('Accounting', 255000);
+
+// // thing to keep in mind
+// const accountingCopy = {
+//   getData: accounting.getSalaries,
+// };
+// console.log(accountingCopy.getData());
+
+// Private and Public accessors;
+
+// class Department {
+//   private name: string;
+//   private salaries: number;
+//   constructor(n: string, s: number) {
+//     this.name = n;
+//     this.salaries = s;
+//   }
+
+//   public getSalaries() {
+//     return this.salaries;
+//   }
+// }
+
+// const accounting = new Department('Accounting', 255000);
+
+// shorthand Initialization
+
+class Department {
+  constructor(private name: string, public salaries: number) {}
+
+  getSalaries() {
+    return this.salaries;
+  }
+}
+
+const accounting = new Department('Accounting', 255000);
