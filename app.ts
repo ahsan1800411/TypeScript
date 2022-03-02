@@ -197,12 +197,110 @@
 
 // shorthand Initialization
 
-class Department {
-  constructor(private name: string, public salaries: number) {}
+// class Department {
+//   constructor(private name: string, public salaries: number) {}
 
-  getSalaries() {
-    return this.salaries;
-  }
-}
+//   getSalaries() {
+//     return this.salaries;
+//   }
+// }
 
-const accounting = new Department('Accounting', 255000);
+// const accounting = new Department('Accounting', 255000);
+
+// readonly accessor/modifier;
+
+// class Department {
+//   constructor(private readonly id: number = 24) {}
+// }
+
+// const accounting = new Department();
+
+// >>>>.. Inheritance;
+
+// class Department {
+//   constructor(public id: number, public name: string) {}
+// }
+
+// class ITDepartment extends Department {
+//   constructor(public salaries: string[]) {
+//     super(2, 'IT');
+//   }
+// }
+
+// const it = new ITDepartment([]);
+// console.log(it);
+
+//>>>>>>>> protected modifier;
+
+// class Department {
+//   constructor(protected name: string) {}
+
+//   displayName() {
+//     console.log('Hello world');
+//   }
+// }
+
+// class ITDepartment extends Department {
+//   constructor() {
+//     super('IT');
+//     this.name;
+//   }
+// }
+
+//   >>>>>> Overriding Properties;
+
+// class Department{
+//      constructor(){}
+
+//      displayName(name:string,id:string):void{
+//         console.log(name);
+//      }
+// }
+
+// class ITDepartment extends Department{
+//   constructor(){
+//     super()
+//   }
+
+//   displayName(name:string,id:string):void{
+
+//   }
+
+// }
+
+// >>>>>>>> Getters and Setters ......
+
+// class Department {
+//   get displayName() {
+//     return { name: this.name, employees: this.employees };
+//   }
+
+//   set employeeAdd(value: string) {
+//     this.employees.push(value);
+//   }
+
+//   constructor(private name: string, private employees: string[]) {}
+// }
+
+// const accounting = new Department('IT', []);
+
+// accounting.employeeAdd = 'Ahsan';
+
+// console.log(accounting.displayName);
+
+// >>>>>>>>>>>>>  static methods and properties;
+
+// Static Methods and Properties: These are the methods and properties that are only available to the class and in order to see them we don;t have to create a new instance of the class  like we do so by using the new keyword as they are only available to the class itself ;
+// Note, when some property or method are using the static keyword, we can't get them in a class using this keyword for using them in a class we have to  write the class keyword and then these properties or methods name with the dot notation.
+
+// class Department {
+//   static id: number;
+
+//   constructor() {}
+
+//   static displayId() {}
+// }
+
+// const accounting = new Department();
+
+// Department.displayId();
