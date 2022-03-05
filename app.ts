@@ -304,3 +304,162 @@
 // const accounting = new Department();
 
 // Department.displayId();
+
+// >>>>> >>>>>>Abstarct classes;
+
+//  abstract class Department {
+//  abstract printEmployees():number
+// }
+
+// class ITDepartment extends Department {
+
+//   printEmployees():number{
+//       return 2
+//   }
+
+// }
+
+// >>>>>>>>>>>>>  Singleton constructor;
+// when we use private keyword with the constructor , it means we can't create a new instance of that class with the new keyword, it becomes singleton;
+
+// class Department{
+//    private constructor(public name1:string){}
+//     printName(){
+//         this.name1;
+//     }
+//     static printEmployees(){
+//         console.log("employees")
+//     }
+// }
+
+// const accounting = new Department("Accounting")   >>> this  line will throw an exception as the above constructor is singleton
+
+// Just for revision;
+
+// to define the type of an object using type aliases
+// type Person={
+//     name: string
+//     age:number
+//     session:string
+// }
+
+// const student:Person={
+//     name:"ahsan",
+//     age:21,
+//     session:"Evening"
+// }
+
+// >>>>>> Interfaces;
+
+// interface Person{
+//    name: string;
+//    age:number
+// }
+
+// const  student:Person={
+//     name:"Ahsan",age:21
+// }
+
+// Interfaces used with classes;
+
+// interface Person{
+//     name1: string;
+//     age:number
+// }
+
+// interface Hobbies{
+//     hobbyName:string;
+// }
+
+// class Teacher implements Person, Hobbies{
+//     constructor(public name1:string, public age:number, public hobbyName:string){}
+// }
+
+// const teacher2:Teacher= {
+//    name1:"bilal",
+//    age:22,
+//    hobbyName:"Programming"
+// }
+
+// const teacher1= new Teacher("Asad",24,"Cricket")
+
+// >>>>>>readonly interface methods and properties
+
+// interface Person {
+//    readonly age:number;
+//     session:string;
+//     greet(message:string):string
+// }
+
+// const student:Person={
+//     age:21,
+//     session:"Evening",
+//     greet(message:string){
+//     return message
+//     }
+// }
+
+// student.greet("Hii , Good Morning , have a nice day");
+
+//  >>>>.. Extending Interfaces;
+
+// interface Named{
+//     name:string
+//     session:string
+// }
+
+// interface Person extends Named{
+//      age:number
+// }
+
+// const student:Named={
+
+//     name:"Ahsan",
+//     session:"Evening"
+// }
+
+//>>.    Interfaces as Function types
+
+// this is how we define funtion types using type aliases
+// type Add=(n1:number,n2:number)=>number;
+
+// const demo:Add=(num1:number,num2:number)=>{
+//   return num1+num2
+// }
+
+// now using Interfaces;
+
+// interface Add{
+//     (n1:number,n2:number):void
+// }
+
+// const demo:Add=(n1:number,n2:number)=>{
+//     return 2
+// }
+
+// demo(2,3)
+
+// Optional Parameters in interfaces;
+
+// interface Person {
+//   name?: string;
+//   age?: number;
+//   session: string;
+// }
+
+// const student: Person = {
+
+//     session: 'Morning',
+// };
+
+// Optional Parameters in classes
+
+// class Department{
+//     constructor(public salaries?:number){}
+
+//     getSalaries?(){
+//         return "Ahsan"
+//     }
+// }
+
+// const accounting= new Department()
