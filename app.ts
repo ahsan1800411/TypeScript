@@ -463,3 +463,87 @@
 // }
 
 // const accounting= new Department()
+
+// Intersection types;;
+
+// Note : when it is used with objects types, it is just like interface inheritance(combine of two types) but when it is used with union types it is just the common of two union types as we see the examples of both in the below
+
+// interface Named {
+//   name: string;
+// }
+
+// interface Person {
+//   age: number;
+//   salaries: number;
+// }
+
+// type Combine = Named & Person;
+
+// const student: Combine = {
+//   name: 'Ahsan',
+//   age: 21,
+//   salaries: 23,
+// };
+
+// type IsAbsent=number | boolean;
+// type OnSale=string | number;
+
+// type Combine= IsAbsent & OnSale
+
+//  5.2 >>>.>> type Guards;
+
+// function add(num1:string| number , num2:string |number){
+
+//     if(typeof num1==="string" || typeof num2 ==="string"){
+//       return num1.toString()+num2.toString()
+//     }
+//     return num1+ num2
+// }
+
+// add(11,"Ahsan")
+
+// Type guards when dealing with objects;
+
+// interface Person{
+//     name:string;
+// }
+
+// interface Product{
+//     name:string;
+//     price:number;
+//     description:string
+// }
+
+// type Combine= Product | Person;
+
+// function result(data:Combine){
+//     console.log(data.name);
+//      if("price" in data){
+//          console.log(data.price)
+//      }
+
+// }
+
+// when dealing with classes;;;;;;
+
+// class Car {
+//   drive() {}
+// }
+// class Truck {
+//   loadCar() {}
+
+//   drive() {}
+// }
+// type Vehicle = Truck | Car;
+
+// function seeResult(v: Vehicle) {
+//   console.log(v.drive());
+
+//   if ('loadCar' in v) {
+//     v.loadCar();
+//   }
+
+//   if (v instanceof Truck) {
+//     v.loadCar();
+//   }
+// }
