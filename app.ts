@@ -452,3 +452,63 @@
 // const result = userData && 'Default';
 // const data="jjjj";
 // const result1 = data ?? 'Default';
+
+// >>>>>>>>> // 6 >>>>>>>>.. Generics ;
+// TypeScript Generics is a tool which provides a way to create reusable components. It creates a component that can work with a variety of data types rather than a single data type. It allows users to consume these components and use their own types.
+
+// 6.1 Built in Generics;
+
+// const names: Array<string> = ['ahsan', 'asad', 'Abubakar'];
+// const names:string[]= ['ahsan', 'asad', 'Abubakar'];
+
+// const promise: Promise<number> = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(12);
+//     reject('Something Goes wrong');
+//   }, 2000);
+// });
+
+// promise.then((data) => console.log(data)).catch((err) => console.log(err));
+
+// Built in Generics;
+
+// function add(a: object, b: object) {
+//   return Object.assign(a, b);
+// }
+
+// const result = add({ name: 'ahsan' }, { age: 22 });
+
+// now make this object with generics
+
+// function add<T, U>(a: T, b: U) {
+//   return Object.assign(a, b);
+// }
+
+// const result = add({ name: 'Ahsan' }, { age: 22 });
+
+// result.name;
+
+// Generics Constraints
+
+// function add<T extends object, U extends object>(a: T, b: U) {
+//   return Object.assign(a, b);
+// }
+// const result = add({}, { age: 22 });
+// console.log(result);
+
+// Now lets another exmaples;
+
+// interface Lengthy {
+//   length: number;
+// }
+
+// function printSomething<T extends Lengthy>(element: T) {
+//   let text;
+//   if (element.length) {
+//     text = 'Got a value';
+//   }
+
+//   return [element, text];
+// }
+
+// console.log(printSomething('Ahsan'));
