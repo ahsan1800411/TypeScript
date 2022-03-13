@@ -512,3 +512,56 @@
 // }
 
 // console.log(printSomething('Ahsan'));
+
+// >>>>>>  The keyof constraint in Typescript;
+
+// function myResult<T extends object, U extends keyof T>(obj: T, key: U) {
+//   return obj[key];
+// }
+
+// myResult({ name: 'ahsan' }, 'name');
+
+// >>>>>>>>>> Working with Generic classes;
+
+// class DataStorage<T> {
+//   private data: T[] = [];
+
+//   addItem(item: T) {
+//     this.data.push(item);
+//   }
+
+//   removeItem(item: T) {
+//     this.data.indexOf(item, 1);
+//   }
+
+//   getItems() {
+//     return [...this.data];
+//   }
+// }
+
+// const newStorage = new DataStorage<string | number>();
+// newStorage.addItem('Ahsan');
+// newStorage.addItem(4);
+// newStorage.getItems();
+
+//  >>>>>> Utility Generic types;
+
+// >>>>.. Partial Type::::// Constructs a type with all properties of Type set to optional.
+
+// interface StudentData {
+//   name: string;
+//   age: number;
+// }
+
+// function returnStudents(name: string, age: number): StudentData {
+//   let result: Partial<StudentData> = {};
+//   result.name = name;
+//   result.age = age;
+
+//   return result as StudentData;
+// }
+
+//   ReadOnly Type in typescript;
+
+// const names: Readonly<string[]> = ['ahsan', 'asad', 'waqas'];
+// console.log(names);
